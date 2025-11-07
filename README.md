@@ -29,3 +29,4 @@ Anyone can use the information or code contained on this page. If you have taken
 
 If you are using my code in an academic or professional environment please include this page OR my paper as a reference.
 
+My thesis (undergraduate) is very accesible, and outlines my procedure for developing the code. It is free to download from https://library2.smu.ca/handle/01/32187.
