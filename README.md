@@ -5,7 +5,7 @@ With $A$ an $N\times N$ matrix and $x,b\in\mathbb{C}^N$. Technically speaking $A
 
 Note $\vec{0} \in C^N$ is the zero vector.
 
-## Proof of Concept
+** High Level Overview **
 
 The essential idea of HHL is to perform a series of linear operations on $\ket{b}$ which represent represents the inverse of $A$, this is done primarily through quantum phase estimation, exploiting the fact: if $Ax = b$ then, if we work in the eigenbasis of $A$,
 
@@ -20,5 +20,7 @@ where $u_j$ are the eigenvectors of $A$ and $\lambda_j$ the associated eigenvalu
 3. Form the operator representing $\exp(iAt)$ (the "time translation" operator for a system defined by $A$). We now have a \emph{unitary} operator. The process for getting this operator in real hardware is not clear.
 4. Now that we have a unitary operator, we can find the eigenphases, which are one-to-one with the eigenvalues of $A$: if $\lambda_j$ is an eigenvalue of $A$, then $e^{i\lambda_jt}$ is the corresponding eigenvalue of $\exp(iAt)$.
 5. The final issue is the transformation $\ket{\lambda_j}\mapsto \dfrac{1}{\lambda_j}$ which is non-unitary and therefore has some probability of failure; we define the *filter function* $f: Z \rightarrow R$ which does the following,
-   $$ f(s) = 
+   $$ f(s) = \dfrac{1}{4\pi\kappa s} $$
+in the well behaved space of the linear system.
+6. We then simply uncompute the phase estimation registers and we're left with a state $\ket{x}$ representing the solution.
 
