@@ -1,0 +1,10 @@
+# HHL Algorithm Simulation Requirements
+
+# Core dependencies
+numpy>=1.21.0
+pennylane>=0.28.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+
+# Note: LaTeX support for matplotlib requires a LaTeX distribution installed on your system
+# For full LaTeX rendering in plots, install TeX Live, MiKTeX, or MacTeX depending on your OS
