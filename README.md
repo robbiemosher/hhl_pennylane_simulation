@@ -33,9 +33,67 @@ where $u_j$ are the eigenvectors of $A$ and $\lambda_j$ the associated eigenvalu
 
 6. **Uncompute the phase estimation registers** and we're left with a state $\ket{x}$ representing the solution.
 
-## Code
+## Installation
 
-The simulation code is available in the [latest release](https://github.com/robbiemosher/hhl_pennylane_simulation/releases/latest).
+### Prerequisites
+- Python 3.7 or higher
+- (Optional) LaTeX distribution for plot rendering (TeX Live, MiKTeX, or MacTeX)
+
+### Setup
+
+1. Clone this repository:
+```bash
+git clone https://github.com/robbiemosher/hhl_pennylane_simulation.git
+cd hhl_pennylane_simulation
+```
+
+2. Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Download the simulation code from the [latest release](https://github.com/robbiemosher/hhl_pennylane_simulation/releases/latest) and run:
+
+```bash
+python HHL_Final_Sim.py
+```
+
+### Code Structure
+
+The simulation performs the following:
+- Implements the HHL algorithm using PennyLane's quantum computing framework
+- Analyzes algorithm performance across different time constants
+- Generates metrics including fidelity, success probability, and norm differences
+- Creates publication-quality plots with LaTeX formatting
+- Saves results as both PDF (vector) and PNG (raster) formats
+
+### Key Functions
+
+- `hhl_circuit()` - Implements the core HHL quantum circuit
+- `data_collection_and_plotting_function()` - Main function for running simulations and generating plots
+- `create_sweep_plots()` - Generates time sweep analysis plots
+- `plot_eigenvalues_vs_metrics()` - Analyzes performance vs eigenvalue distribution
+
+### Customization
+
+You can modify the simulation parameters in the main function call at the bottom of the script:
+```python
+data_collection_and_plotting_function([15], 100, [4], 1)
+```
+Parameters:
+- Matrix sizes to test
+- Number of time points in sweep
+- Precision qubit counts
+- Number of test matrices
+
+## Output
+
+The simulation generates:
+- **Data files** (`.npy` format): Numerical results from simulations
+- **Plots** (PDF and PNG): Visualizations of fidelity, success probability, and norm differences
+- **Summary text file**: Information about the simulation run
 
 ## Thesis
 
@@ -44,10 +102,6 @@ For a comprehensive and accessible explanation of the HHL algorithm and the deve
 **[Download Thesis (PDF)](https://github.com/robbiemosher/hhl_pennylane_simulation/releases/latest)** 
 
 Also available at: [SMU Library](https://library2.smu.ca/handle/01/32187)
-
-## Usage
-
-[Add installation and usage instructions here once you add requirements.txt]
 
 ## License & Attribution
 
@@ -60,3 +114,7 @@ Anyone can use the information or code contained in this repository. If you have
 ## Contact
 
 For questions, improvements, or suggestions, feel free to open an issue or reach out.
+
+## Acknowledgments
+
+This work was completed as part of my undergraduate thesis at Saint Mary's University, Halifax, Nova Scotia.
