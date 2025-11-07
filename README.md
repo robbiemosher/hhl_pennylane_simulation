@@ -17,5 +17,8 @@ where $u_j$ are the eigenvectors of $A$ and $\lambda_j$ the associated eigenvalu
 
 2. Apply Hadamard gates to the estimation register to form the computational basis.
 
-3. Form the operator representing $\exp(iAt)$ (the "time translation" operator for a system defined by $A$). We now have a \emph{unitary} operator.
+3. Form the operator representing $\exp(iAt)$ (the "time translation" operator for a system defined by $A$). We now have a \emph{unitary} operator. The process for getting this operator in real hardware is not clear.
+4. Now that we have a unitary operator, we can find the eigenphases, which are one-to-one with the eigenvalues of $A$: if $\lambda_j$ is an eigenvalue of $A$, then $e^{i\lambda_jt}$ is the corresponding eigenvalue of $\exp(iAt)$.
+5. The final issue is the transformation $\ket{\lambda_j}\mapsto \dfrac{1}{\lambda_j}$ which is non-unitary and therefore has some probability of failure; we define the *filter function* $f: Z \rightarrow R$ which does the following,
+   $$ f(s) = 
 
